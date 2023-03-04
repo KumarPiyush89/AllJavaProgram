@@ -1,0 +1,194 @@
+/* Single Linked List Operations*/
+#include<stdio.h>
+#include<malloc.h>
+struct Node
+{
+    float data;
+    struct Node *next;
+};
+int main()
+{
+    struct Node *start=NULL;
+    struct Node *nnode,*tnode,*pnode;
+    float newData;
+    int choice;
+    int pos;
+    
+    int i;
+    do
+    {
+        //print menu
+        system("cls");
+        printf("\nSingle Linked List Operations\n===============================================");
+        printf("\n1. Insert At last in list\n2. Insert at first in list\n3. Insert at specefic position in list\n4. Display List\n5. Exit\n========================================\n");
+        printf("Enter your choice:");;
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1://code for insert new node at last
+                //1. create new node
+                
+                nnode=(struct Node*)malloc(sizeof(struct Node));
+                //2. check for node
+                if(nnode==NULL)
+                {
+                    printf("\nUnable to create new node.");
+                    break;
+                }
+                //3. accept ne data and put it in data part of new node
+                printf("\nEnter new data:");
+                scanf("%f",&newData);
+                nnode->data=newData;
+                nnode->next=NULL;
+
+                //4. make new node first if list is empty
+                if(start==NULL)
+                {
+                    start=nnode;
+                    nnode=NULL;
+                    printf("New node inserted successfully at the end of list");
+                    break;
+                }
+
+                //5. find the address of last node of list
+                    tnode=start;
+                    while(tnode->next!=NULL)
+                    {
+                        tnode=tnode->next;
+                    }
+
+                //6. put address of new node in address part of last node
+                tnode->next=nnode;
+                nnode=NULL;
+                printf("new node inserted successfully at the end of list");
+
+            break;
+            case 2://insert at first
+                    //Code for insert new node first
+                    nnode=(struct Node*)malloc(sizeof(struct Node));
+                    //check for node
+                    if(nnode==NULL)
+                    {
+                        printf("\n\t Unabel TO Create New Node");
+                        break;
+                    }
+                    printf("\n Enter New Data:");
+                    scanf("%f",&newData);
+                    nnode->data=newData;
+                    nnode->next=NULL;
+                    nnode->next=start;
+                    start=nnode;
+                    nnode=NULL;
+                    printf("\n New Node inserted successfully at first");
+                    break;
+            
+             case 3://code for insert Node in speceficec position
+                /*nnode=(struct Node*)malloc(sizeof(struct Node));
+                if(nnode==NULL)
+                {
+                    printf("\n\t Unable to create a new node");
+                    break;
+                }
+                printf("\n Enter Position:");
+                scanf("%d",&pos);
+                printf("\n Enter New Data:");
+                scanf("%f",&newData);
+                nnode->data = newData;
+                nnode->next= NULL;
+                if(pos==1)
+                {
+                    nnode->next=start;
+                    start=nnode;
+                }
+                else
+                {
+                    pnode=start;
+                    for(i=1;i<pos-1 && pnode!=NULL;i++)
+                    pnode=pnode->next;
+                    if(pnode=NULL)
+                    {
+                    printf("\n Invalid position");
+                    free(nnode);
+                    break;
+                    }
+                    nnode->next=pnode->next;
+                    pnode->next=nnode;
+                    nnode=NULL;
+                }
+                break;*/
+                //Insert at Specific Location
+				//1. Create new node
+				nnode=(struct Node*) malloc(sizeof(struct Node));
+				if(!nnode)
+				{
+					printf("\n\t Unable to create new node");
+					break;					
+				}
+				//put data in data part and NULL in address part of new node
+				nnode->data=inputData();
+				nnode->next=NULL;
+				//accet th position 
+				printf("Enter the position to insert node:");
+				scanf("%d",&pos);
+				pos=abs(pos);
+				if(pos==0)pos=1;
+				//make pos 1 if list is empty
+				if(!start)pos=1;
+				
+				//is given position is 1
+				if(pos==1)
+				{
+					//follow insert at first operation
+					nnode->next=start;
+					start=nnode;
+					nnode=NULL;
+					printf("New Node Inserted successfully");
+					break;					
+				}	
+				//find th address of (pos-i)th node
+				pnode=start;
+				pos=1;
+				while(nodeNo<pos-1&&pnode->next)
+				{
+					pnode=pnode->next;
+					nodeNo++;
+				}
+				//put the address of (pos)th node in address part of new node
+				nnode->next=pnode->next;
+				//put the address of new node in address part of (pos-1)th address part
+				pnode->next=nnode;
+				 //put NULL in nnode
+				nnode=NULL;
+				printf("New Node Inserted successfully");	
+			
+			break;
+            case 4://code for display list
+            //system("color 1f");
+            if(start==NULL)
+            {
+                printf("\n List is empty!");
+            }
+            else
+            {
+                printf("Contents of list:");
+                tnode=start;
+                while(tnode!=NULL)
+                {
+                    printf("%.2f,", tnode->data);
+                    tnode=tnode->next;
+                }
+            }
+            break;
+
+           
+            case 5://code for exit
+                return 0;
+            default:
+            printf("\n Sorry! you have entered invalid option");
+        }
+        printf("\n");
+        system("pause");
+    } while (1);
+    
+}
+
