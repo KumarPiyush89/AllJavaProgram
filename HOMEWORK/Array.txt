@@ -1,0 +1,161 @@
+/*Array Operations*/
+#include<stdio.h>
+#define SIZE 10
+int main()
+{
+int list[SIZE],totalElement=0;
+int i,choice,newData,pos;
+do
+{
+    system("cls");
+    printf("\nOptions\n================");
+    printf("\n1. Insert New Data at first");
+    printf("\n2. Insert new data at last");
+    printf("\n3. Insert new data at specific position");
+    printf("\n4. Display List");
+    printf("\n5. Exit");
+    printf("\n Enter choice:");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1://code for insertion at first
+             if(totalElement==SIZE)
+            {
+                printf("\nSorry! List is already full.");
+                break;
+            }
+            //accept new data
+            printf("\nEnter new data:");
+            scanf("%d",&newData);
+            //empty the oth element of list
+            for(i=totalElement-1;i>=0;i-=1)
+            {
+                list[i+1]=list[i];
+            }
+            //put newdta at oth element
+            list[0]=newData;
+            //increase totalElement by 1
+            totalElement+=1;
+            printf("\n %d inserted successfully at the begning of list.",newData);
+        break;
+        case 2://code for insertion at last
+            if(totalElement==SIZE)
+            {
+                printf("\nSorry! List is already full.");
+                break;
+            }
+            //accept new data
+            printf("\nEnter new data:");
+            scanf("%d",&newData);
+            //put new data at end of list
+            list[totalElement]=newData;
+            //increase totalElement by 1
+            totalElement+=1;
+            printf("\n %d added successfully at the end of list",newData);
+
+        break;
+        case 3://code for insertion at specific position
+            
+            /*
+            else
+            {
+                printf("Enter Valid position for insertion");
+                scanf("%d",pos);
+                if(pos<=0 && pos>totalElement+1)
+                {
+                    printf("\n Not a valid position for insertion in Array");
+                    break;
+                }
+                else
+                {
+                    //accept new data 
+                    printf("\n Enter new data you want to insert into Array");
+                    scanf("%d",&newData);
+                    
+                }
+            }*/
+            
+            
+            
+            
+            
+            if(totalElement==SIZE)
+            {
+                printf("\nSorry! List is already full.");
+                break;
+            }
+            else
+            {
+            //Check valid position for insertion at specific position
+            printf("Enter Valid Position:");
+            scanf("%d",&pos);
+
+            if(pos<=0||pos>totalElement+1)
+            {
+                printf("\nNot a valid position for insertion in Array");
+                break;
+            }
+            pos=pos>totalElement+1?totalElement+1:pos;
+            printf("Enter a Number you want to insert");
+            scanf("%d",&newData);
+            for(i=totalElement-1;i>=pos-1;i++)
+            list[i-1] = list[i];
+            list[pos-1] = newData;
+            totalElement-=1;
+            list[pos-1] =newData;
+            totalElement++;
+            printf("\n %d is Successfully added to %d position",newData,pos);
+            }
+                
+            /*
+            //accept new data 
+            printf("\nEnter new data:");
+            scanf("%d",&newData);*/
+            /*if(pos<1)
+			{
+				printf("Not a valid position for insertion in Array");
+			}
+			else
+			{
+				//if(pos>totalElement+1)
+				//pos=totalElement+1;
+				pos=pos>totalElement+1?totalElement+1:pos;
+				printf("Enter a number you want to Insert:");
+				scanf("%d",&newData);
+				for(i=totalElement;i>=pos-1;i--)
+				array[i+1]=array[i];
+				array[pos-1]=newData;
+				totalElement++;
+				printf("\n%d is succesfully added to %d position",newData,pos);
+			}*/
+            
+
+
+        case 4://code to print list
+            if(totalElement==0)
+            {
+                printf("\n List is Empty!");
+                break;
+            }
+            printf("\nList Data=");
+            for(i=0;i<totalElement;i++)
+            {
+                printf("%d",list[i]);
+                //print seperator
+                if(i<totalElement-1)
+                    printf(", ");
+                
+            }
+        break;
+        case 5://code for exit from progam
+        return 0;
+        default:
+        printf("\n OOPs! You have entered invalid choice");
+    }
+    //pause code to move on next iteration
+    printf("\n");
+    system("pause");
+} while (1);
+
+
+}

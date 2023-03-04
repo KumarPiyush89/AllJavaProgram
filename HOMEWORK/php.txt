@@ -1,0 +1,252 @@
+php
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="php.css"/>
+    <title>Blood Donation</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+        <h1>Blood Donation Successfully</h1>
+            <div class="col-sm-4"><h2>Name:- <?= $_GET['first'];?><?= $_GET['second'];?></h2></div>
+            <div class="col-sm-4"><h2>Date Of birth:- <?= $_GET['Date'];?></h2></div>
+            <div class="col-sm-4"><h2>Gender:- <?=$_GET['gender'];?></h2></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"><h2>Occupation:- <?=$_GET['occupation'];?></h2></div>
+            <div class="col-sm-4"><h2>Contact:- <?= $_GET['phone'];?></h2></div>
+            <div class="col-sm-4"><h2>Contact:- <?= $_GET['phone'];?></h2></div>
+        </div>
+    </div>
+
+
+    <h1>Blood Donation Successfully</h1>
+    <h2>Name:- <?= $_GET['first'];?><?= $_GET['second'];?></h2>
+    <h2>Date Of birth:- <?= $_GET['Date'];?></h2>
+    <h2>Gender:- <?=$_GET['gender'];?></h2>
+    <h2>Occupation:- <?=$_GET['occupation'];?></h2>
+    <h2>Contact:- <?= $_GET['phone'];?></h2>
+    <h2>Email:- <?= $_GET['email'];?></h2>
+    <h2>Address:- <?= $_GET['address'];?></h2>
+    <h2>Street Address:- <?= $_GET['saddress'];?></h2>
+    <h2>City:- <?= $_GET['city'];?></h2>
+    <h2>State:- <?= $_GET['state'];?></h2>
+    <h2>Postal:- <?= $_GET['zip'];?></h2>
+    <h2>Weight:- <?= $_GET['weight'];?></h2>
+    <h2>Age:- <?= $_GET['age'];?></h2>
+    <h2>HP:- <?= $_GET['hp'];?></h2>
+    <h2>BP:- <?= $_GET['bp'];?></h2>
+    <h2>Temparature:- <?= $_GET['temp'];?></h2>
+    <h2>Pulse:- <?= $_GET['pulse'];?></h2>
+    <h2>Donated Previously:- <?= $_GET['donated'];?></h2>
+    <h2>Last time donated blood:- <?= $_GET['last'];?></h2>
+    <h2>In the last six month you have Doing:- <?= $_GET['sixmonth'];?></h2>
+    <h2> You suffer:- <?= $_GET['diseases'];?> </h2>
+    <h2> You are taking:- <?= $_GET['72hours'];?></h2>
+</body>
+</html>
+
+
+
+
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>BloodDonation</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <form action="BloodDonation.php" method="get">
+        <div class="row">
+            <div class="col-sm-12 bg-info"><br/><h1 class="text-center text-light">BLOOD DONATION FORM</h1><br/></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 bg-info"></div>
+            <div class="col-sm-6 bg-light">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8"><h1 class="  text-danger text-center"><u>Blood</u> <u>Donation</u> <u>Form</u><hr/></h1>
+                        <b>Confidential -Plese answer the following questions correctly.<br/> 
+                            This will help to protect you and the patient who receives your blood. </b></div>
+                    <div class="col-sm-2"></div><hr/>
+                    <label><h5>Full Name<sup>*</sup></h5></label>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" name="first" class="form-control" placeholder="Enter your first name" required/>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" name="second" class="form-control"  placeholder="Enter your last name" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5"><hr/><label><h5>Enter Your Date Of Birth<sup>*</sup></h5></label>
+                        <input type="date" name="Date" class="form-control" required/></div>
+                    <div class="col-sm-7"><hr/></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"><hr/>
+                        <label><h5>Gender:<sup>*</sup></h5></label><br/><input type="radio" name="gender" value="male" checked><label>Male</label>
+                            <input type="radio" name="gender" value="female"><label>Female</label>
+                            <input type="radio" name="gender" value="third"><label>Third Gender</label>
+                    </div>
+                    <div class="col-sm-6"><hr/>
+                        <label><h5>Occupation</h5></label><br/>
+                        <input type="text" name="occupation" class="form-control" placeholder="Occupation" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"><hr/>
+                        <label><h5>Contact No.<sup>*</sup></h5></label>
+                        <input type="number" name="phone" class="form-control" placeholder="xxxxxxxxxx" required/>
+                    </div>
+                    <div class="col-sm-6"><hr/>
+                        <label><h5>Email<sup>*</sup></h5></label>
+                        <input type="email" name="email" class="form-control" placeholder="google@gmail.com" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"><hr/>
+                        <label><h5>Address<sup>*</sup></h5></label>
+                        <input type="text" name="address" class="form-control" placeholder="Address" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"><hr/>
+                        <label><h5>Street Address</h5></label>
+                        <input type="text" name="saddress" class="form-control" placeholder="Address" /><br/>
+                    </div>
+                </div>
+                <div class="row"><hr/>
+                    <div class="col-sm-6">
+                        <label><h5>City<sup>*</sup></h5></label>
+                        <input type="text" name="city" class="form-control" placeholder="CITY" required/><br/>
+                    </div>
+                    <div class="col-sm-6"><br/>
+                        <input type="text" name="state" class="form-control" placeholder="State" required/><br/>
+                    </div>
+                </div>
+                <div class="row"><hr/>
+                    <div class="col-sm-4">
+                        <labe><h5>Postal / Zip Code<sup>*</sup></h5></labe>
+                        <input type="number" name="zip" class="form-control" placeholder="xxxxxx" required/><br/>
+                    </div>
+                </div>
+                <div class="row"><hr/>
+                    <div class="col-sm-6">
+                        <label><h5>Weight<sup>*</sup></h5></label>
+                        <input type="number" name="weight" class="form-control" placeholder="xx" required/><br/>
+                    </div>
+                    <div class="col-sm-6">
+                        <label><h5>Age<sup>*</sup></h5></label>
+                        <input type="number" name="age" class="form-control" placeholder="xx" required/><br/>
+                    </div>
+                </div>
+                <div class="row"><hr/>
+                    <div class="col-sm-6">
+                        <label><h5>HP<sup>*</sup></h5></label>
+                        <input type="number"  name="hp"class="form-control" placeholder="xx" required/><br/>
+                    </div>
+                    <div class="col-sm-6">
+                        <label><h5>BP<sup>*</sup></h5></label>
+                        <input type="number" name="bp" class="form-control" placeholder="xx" required/><br/>
+                    </div>
+                </div>
+                <div class="row"><hr/>
+                    <div class="col-sm-6">
+                        <label><h5>Temparature<sup>*</sup></h5></label>
+                        <input type="number" name="temp" class="form-control" placeholder="xx" required/><br/>
+                    </div>
+                    <div class="col-sm-6">
+                        <label><h5>Pulse<sup>*</sup></h5></label>
+                        <input type="number" name="pulse" class="form-control" placeholder="xx" required/><br/>
+                    </div>
+                </div>
+                <div class="row"><hr/>
+                    <div class="col-sm-4">
+                        <label><h5>Donated previously<sup>*</sup></h5></label>
+                        <input type="radio" name="donated" value="yes" required><label>Yes</label>
+                        <input type="radio" name="donated" value="no" required><label>No</label>
+                    </div>
+                </div><br/>
+                <div class="row"><hr/><label><h5>What was the last time you donated blood?</h5></label>
+                    <div class="col-sm-4">
+                        
+                        <input type="date" name="last" class="form-control"  /><br/>
+                    </div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <div class="row"><hr/><label><h5>in the last six months have you had any of the following?<sup>*</sup></h5></label>
+                    <div class="col-sm-3">
+                        <input type="radio" name="sixmonth" value="tattooing" required><label>Tattoing</label><br>
+                        <input type="radio" name="sixmonth" value="ear" required><label>Ear Piercing</label><br/>
+                        <input type="radio" name="sixmonth" value="dental" required><label>Dental extraction</label><br/>
+                    </div>
+                    <div class="col-sm-9"></div>
+                </div>
+                <div class="row"><hr/><label><h5>Do You suffer from or have suffered from any of the following?<sup>*</sup></h5></label>
+                    <div class="col-sm-6">
+                        <input type="radio" name="diseases" value="heart" required><label>Herat diseases</label><br>
+                        <input type="radio" name="diseases" value="diabetes" required><label>Diabetes</label><br>
+                        <input type="radio" name="diseases" value="sexually" required><label> Sexually Transmitted Diseases</label><br>
+                        <input type="radio" name="diseases" value="allergic" required><label>Allergic Diseases</label><br>
+                        <input type="radio" name="diseases" value="lung" required><label>Lung Diseases</label><br>
+                        <input type="radio" name="diseases" value="epilepsy" required><label> Epilepsy(haray rog)</label><br>
+                        <input type="radio" name="diseases" value="jundic" required><label>Jaundic (last one year)</label><br>
+                        <input type="radio" name="diseases" value="fainting" required><label> Fainting speels</label><br>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="radio" name="diseases" value="cancer" required><label>Cancer/Malignant Disease</label><br/>
+                        <input type="radio" name="diseases" value="hepatitis" required><label> Hepatitis B/C</label><br/>
+                        <input type="radio" name="diseases" value="typhoid" required><label> Hepatitis B/C</label><br/>
+                        <input type="radio" name="diseases" value="tuberculosis" required><label>Tuberculosis</label><br/>
+                        <input type="radio" name="diseases" value="kidney" required><label>Kidney Disease</label><br/>
+                        <input type="radio" name="diseases" value="abnormal" required><label>abnormal Bleeding tendency</label><br/>
+                        <input type="radio" name="diseases" value="malaria" required><label>Malaria (six Month)</label><br/>
+                    </div>
+                </div>
+                <div class="row"><hr/><label><h5>Are You taking or have you taken any of these in the past 72 hours?<sup>*</sup></h5></label>
+                    <div class="col-sm-6">
+                        <input type="radio" name="72hours" value="antibiotics" required/><label>Antibiotics</label><br/>
+                        <input type="radio" name="72hours" value="steroids" required/><label>Steroids</label><br/>
+                        <input type="radio" name="72hours" value="aspirin" required/><label>Aspirin</label><br/>
+                        <input type="radio" name="72hours" value="vaccinations" required/><label>Vaccinations</label><br/>
+                        <input type="radio" name="72hours" value="alcohol" required/><label>Alcohol</label><br/>
+                        <input type="radio" name="72hours" value="Dog " required/><label>Dog bite Rabies vaccine(1 year)</label><br/>
+                    </div>
+                </div><br/>
+                <div class="row"><hr/>
+                    <div class="col-sm-2"><input type="reset"/> </div>
+                    <div class="col-sm-8"></div>
+                    <div class="col-sm-2"><input type="submit"/> </div>
+                </div>
+
+
+            </div>
+            <div class="col-sm-3 bg-info"></div>
+        </div>
+        <div class="row bg-info"><br/><br/><br/><br/><br/><br/></div>
+        </form>
+    </div>
+</body>
+</html>
